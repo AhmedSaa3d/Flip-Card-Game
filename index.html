@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Cards Game</title>
+    <meta name="Author" content="Ahmed Saad">
+    <meta name="description" content="This is an app for playing a memory card game.">
+    <link rel="icon" href="assets/images/site_icon.png">
+    <!--Font Awesome V6.4.0-->
+    <link rel="stylesheet" href="styles/stylesHelper/all.min.css">
+    <!--Main tempalte css file-->
+    <link rel="stylesheet" href="styles/style.css">
+    <!--Render all elements normally normalize.css v8.0.1-->
+    <link rel="stylesheet" href="styles/stylesHelper/normalize.css">
+     <!--Space Grotesk font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">  
+    <!-- this solve the exports error -->
+    <script>var exports = {};</script> 
+</head>
+
+<body>
+ <!-- Start Flip Card Game -->
+     <div class="flip-card-game">
+            <!-- Start main-menu-Flip -->
+            <div class="main-menu makeMenu">
+                <img src="./assets/images/site_icon.png" alt="The Logo Of The Game">
+                <div class="menu-btns">
+                    <button class="start-playing-btn" data-layout="playing-page">
+                        Start Playing
+                    </button>
+                    <button class="setup-playing-btn" data-layout="setup-playing-menu">
+                        Game Setup
+                    </button>
+                    <button class="game-rules-btn" data-layout="game-rules-menu">
+                        Game Rules
+                    </button>
+                </div>
+            </div>
+            <!-- End main-menu -->
+            <!-- Start setup-playing-menu -->
+            <div class="setup-playing-menu makeMenu d-none">
+                <h2>Game Setup</h2>
+                <div class="menu-btns">
+                    <div class="cards-type-btns">
+                        <button data-key="cardsType" data-value="number">
+                            Numbers
+                        </button>
+                        <button class="active" data-key="cardsType" data-value="icon">
+                            Icons
+                        </button>
+                    </div>
+                    <div class="player-number-btns">
+                        <button data-key="playerNumbers" data-value="1">
+                            1
+                        </button>
+                        <button class="active" data-key="playerNumbers" data-value="2">
+                            2
+                        </button>
+                        <button data-key="playerNumbers" data-value="3">
+                            3
+                        </button>
+                        <button data-key="playerNumbers" data-value="4">
+                            4
+                        </button>
+                    </div>
+                    <!-- data value comes from 6*4=24/2=12 -->
+                    <div class="grid-btns">
+                        <button data-key="grid" data-value="8">
+                            4*4
+                        </button>
+                        <button class="active" data-key="grid" data-value="18">
+                            6*6
+                        </button>
+                        <button data-key="grid" data-value="32">
+                            8*8
+                        </button>
+                    </div>
+                    <div class="sound-btns">
+                        <button class="active" data-key="sound" data-value="on">
+                            <i class="fa-solid fa-volume-high fa-xl"></i>
+                        </button>
+                        <button data-key="sound" data-value="off">
+                            <i class="fa-solid fa-volume-xmark fa-xl"></i>
+                        </button>
+                    </div>   
+                </div>
+                <span class="makeDownBtn back-btn">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+            </div>
+            <!-- end setup-playing-menu -->
+            <!-- Start game-rules-menu -->
+            <div class="game-rules-menu makeMenu d-none">
+                <h2>Game Rules</h2>
+                <div class="game-rules-body">
+                    <div>
+                        <h3>Objective</h3>
+                        <p>Brain games make your brain active always.</p>
+                    </div>
+                    <div>
+                        <h3>How To Play</h3>
+                        <p>1. you have to select players count, cards type, grid size.</p>
+                        <p>2. If only one player play, he fliped all the card with free time play.</p>
+                        <p>3. In turn, each player has 15 seconds only to match many cards as he can.</p>
+                        <p>4. If he matches two cards wrong. he wait until next turn to able to play again.</p>        
+                        <p>5. During playing, you see the results of correct/ wrong matched.</p>
+                        <p>6. The game ends when all cards all flipped.</p>
+                    </div>
+                </div>
+                <span class="makeDownBtn back-btn">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+            </div>
+            <!-- end game-rules-menu -->
+            <!-- start playing page -->
+            <div class="playing-page d-none">
+                <div class="playing-header">
+                    <img class="go-home" src="./assets/images/site_icon.png" alt="The Logo Of The Game">         
+                    <div class="players">
+                    </div>
+                </div>               
+                <div class="outer-timer">
+                    <div class="inner-timer"></div>
+                </div>
+                <div class="game-blocks"></div>   
+            </div>
+            <!-- end playing page -->
+            <!-- start high scores menu-->
+            <div class="high-score-menu makeMenu d-none">
+                <h2>High Scores</h2>
+                <div class="high-score-body">
+                    <div class="player">
+                        <div class="playerName">
+                            <span>Player</span>
+                            <i class="fa-solid fa-1 playerNum"></i>
+                        </div>
+                        <div class="choses">
+                            <div class="choses-done">
+                                <i class="fa-solid fa-check"></i>
+                                <span>10</span>
+                            </div>
+                            <div class="choses-wrong">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player">
+                        <div class="playerName">
+                            <span>Player</span>
+                            <i class="fa-solid fa-1 playerNum"></i>
+                        </div>
+                        <div class="choses">
+                            <div class="choses-done">
+                                <i class="fa-solid fa-check"></i>
+                                <span>10</span>
+                            </div>
+                            <div class="choses-wrong">
+                                <i class="fa-solid fa-xmark"></i>
+                                <span>15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <span class="makeDownBtn">
+                    <i class="fa-solid fa-check"></i>
+                </span>
+            </div>
+            <!-- end high scores menu-->
+    </div>
+ <!-- End Flip Card Game -->
+
+<script type="module" src="scripts/main.js"></script>
+
+</body>
+
+</html>
+

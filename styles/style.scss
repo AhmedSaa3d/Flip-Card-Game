@@ -1,0 +1,268 @@
+//#region imports
+@use "./stylesHelper/global-rules" as *;
+@use "./stylesHelper/global-variables" as *;
+//#endregion
+
+//#region global
+body {
+    font-family: $spaceGrotesk-Fnt;
+    background-color: $pirple-dark-clr;
+}
+img{    
+    @include mixinPropWithKit("transform", scaleX(-1));//to make it flip
+    width:8rem;
+    height: 8rem;
+    margin: 0 auto;     
+}
+.flip-card-game{
+    .makeMenu{
+        @include mixinMakeDisplay(grid,center,initial,1rem);
+        @include mixinPropWithKit("border-radius", $borderRadius-menu);
+        position: relative;
+        width: 29rem;
+        padding: 2.2rem 2.2rem 4rem;
+        margin: 4rem auto;
+        box-shadow: $boxShadow-pirpleLighter;
+        border: $border-pirpleLighter;
+        background-color: $pirple-light-clr;
+        h2{
+            color: $white-light-clr;
+            margin: 1rem auto;
+            font-size: 2rem;
+            text-transform: capitalize;
+            font-weight: bold;
+            letter-spacing: .5rem;
+            word-spacing: .5rem;       
+        }
+        .menu-btns{
+            @include mixinMakeDisplay(grid,center,center,1.5rem);
+        }
+        button{
+            @include mixinPropWithKit("transition", $main-trans-time);
+            @include mixinMakeDisplay(flex,center,center, 0);             
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            height: 4rem;
+            background-color: $white-light-clr;
+            box-shadow: $boxShadow-pirpleLighter;
+            border: $border-pirpleLighter;
+            &:hover,&.active{
+                box-shadow: 0 10px 0 $pirple-dark-clr;
+                border-color: $pirple-dark-clr;  
+            }
+        }
+        .makeDownBtn{
+            @include mixinPropWithKit("border-radius", $borderRadius-circle);
+            @include mixinPropWithKit("transform",translateX(-50%));
+            @include mixinMakeDisplay(flex,center,center, 0);             
+            position: absolute;
+            left: 50%;
+            bottom: -2.5rem;
+            width: 5rem;
+            height: 5rem;
+            cursor: pointer;
+            font-size: 2rem;
+            color:$pirple-lighter-clr;
+            background-color: $pirple-light-clr;
+            box-shadow: $boxShadow-pirpleLighter;
+            border: $border-pirpleLighter;
+            &:hover{
+                background-color: $pirple-dark-clr;
+            }
+        }
+    }
+}
+//#endregion
+
+//#region main menu
+.main-menu{
+    button{
+    @include mixinPropWithKit("border-radius", $borderRadius-menu);    
+    color: $pirple-dark-clr;
+    width: $width-25rem;    
+    }
+}
+//#endregion
+
+//#region setup typing menu
+.setup-playing-menu{
+    .menu-btns > div{
+        @include mixinMakeDisplay(flex,center,center,0);
+        button{            
+            @include mixinPropWithKit("border-radius", $borderRadius-10);    
+            color: $pirple-lighter-clr;
+            display: inline-block;
+            &:hover,
+            &.active{
+                color: $pirple-dark-clr;
+            }
+        }
+    }
+    .cards-type-btns button,
+    .sound-btns button{        
+        width:calc($width-25rem / 2);
+    }
+    .grid-btns button{
+        width:calc($width-25rem / 3);
+    }
+    .player-number-btns button{
+        width:calc($width-25rem / 4);
+    }
+}
+//#endregion
+
+//#region game-rules-menu
+.game-rules-menu{
+    .game-rules-body{
+        overflow-y: auto;
+        h3{
+            font-size: 1.5rem;
+            color: $pirple-dark-clr;
+            margin: .4rem 0;
+        }
+        p{
+            padding: 0 0.5rem 0.4rem;
+            font-size: 1rem;
+            color: $pirple-lighter-clr;
+            margin: 0rem;
+            line-height: 1.5rem;
+            text-align: justify;
+        }
+    }
+}
+//#endregion
+
+//#region playing page
+.playing-page{
+    width: 65rem;
+    margin: 0 auto;
+    padding: 1rem;
+    .playing-header{
+        @include mixinMakeDisplay(flex,space-between,initial,9rem);
+        margin: 3.5rem 0 2rem;
+        img{
+            cursor: pointer;
+        }
+        .players{
+            @include mixinMakeDisplay(flex,space-evenly,center,2rem);
+            flex: 1;
+            .player{
+                @include mixinPropWithKit("border-radius", $borderRadius-6);
+                @include mixinPropWithKit("transition", $main-trans-time);
+                padding: 1rem 0.5rem 0.5rem;
+                position: relative;
+                font-size: 2rem;
+                opacity: .5;
+                .playerNum{
+                    @include mixinPropWithKit("transform", translateX(-50%));
+                    position: absolute;
+                    font-size: 4rem;
+                    top:-2.5rem;
+                    left:50%;
+                }
+                .choses{
+                    margin-top: .5rem;
+                    >div{
+                        @include mixinMakeDisplay(flex,space-evenly,center,.8rem);
+                        font-size: 1.5rem;   
+                    }
+                }
+            }
+        }
+    }
+    .outer-timer{
+        @include mixinPropWithKit("border-radius", $borderRadius-6);
+        @include mixinMakeDisplay(flex,flex-end,center,0);
+        background-color: $pirple-light-clr;
+        width:100%;
+        .inner-timer{
+            @include mixinPropWithKit("border-radius", $borderRadius-6);
+            // background-color: $pirple-lighter-clr;
+            width: 100%;
+            height: 0.5rem;
+        }
+    }
+    .game-blocks{
+        display: grid;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        perspective: 2000px;
+        .game-block{        
+            @include mixinPropWithKit("transition", $main-trans-time);
+            @include mixinPropWithKit("border-radius", $borderRadius-6);
+            transform-style: preserve-3d;
+            position: relative;
+            // background-color: $pirple-light-clr;       
+            .face{
+                @include mixinMakeDisplay(flex,center,center,0);
+                @include mixinPropWithKit("backface-visibility", hidden);                
+                position: absolute;          
+                width: 100%;
+                height: 100%;
+            }
+            .front{
+                cursor: pointer;
+                font-size: 3rem;
+           }
+            .back{
+                @include mixinPropWithKit("transform", rotateY(180deg));
+                 font-size: 4rem;
+            }
+        }
+    }
+}
+//#endregion
+
+//#region highScores
+.high-score-menu{
+    @include mixinPropWithKit("transform",translateX(-50%));
+    min-height: 5rem;
+    position: fixed !important;
+    top: 1.19rem;
+    left: 50%;
+    z-index: 2;
+    .high-score-body{
+        width: 29rem;
+        padding: 1rem;
+        .player{
+          @include mixinMakeDisplay(flex,space-between,center,0rem);
+          @include mixinPropWithKit("border-radius", $borderRadius-6);
+          background-color: $pirple-lighter-clr;
+          font-size: 2.5rem;
+          margin-bottom: .5rem;
+          padding: .5rem;
+          .choses{
+            @include mixinMakeDisplay(flex,space-between,center,1rem);
+            font-size: 2rem;
+          }
+        }
+    }
+}
+
+//#endregion
+
+//#region very small media
+@media (max-width : 350px) {
+    .makeMenu{
+        width: 20rem !important;
+        h2{
+            font-size: 1.7rem !important;
+        }
+    }
+    .main-menu button{
+            width: $width-18rem;    
+    }
+    .cards-type-btns button,
+    .sound-btns button{        
+        width:calc($width-18rem / 2) !important;
+    }
+    .grid-btns button{
+        width:calc($width-18rem / 3) !important;
+    }
+    .player-number-btns button{
+        width:calc($width-18rem / 4) !important;
+    }   
+}
+//#endregion

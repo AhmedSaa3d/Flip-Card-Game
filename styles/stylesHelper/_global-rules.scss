@@ -1,0 +1,157 @@
+//#region imports
+@use "./global-variables" as *;
+//#endregion
+
+//#region global mixins
+@mixin mixinPropWithKit($proberty, $value){
+    #{$proberty}: $value;
+    -webkit-#{$proberty}: $value;
+    -moz-#{$proberty}: $value;
+    -ms-#{$proberty}: $value;
+    -o-#{$proberty}: $value;
+}
+
+@mixin mixinMakeDisplay($type, $justify, $align, $gap){
+    display: $type;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin mixinMakePlayer($clr,$bg){
+    box-shadow: 0 10px 0 $clr;
+    border: 3px solid $clr;
+    color:$clr;
+    background-color: $bg;         
+}
+
+//#endregion
+
+//#region global rules
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: $pirple-light-clr;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $pirple-lighter-clr;
+    @include mixinPropWithKit("border-radius",6px);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width : 768px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width : 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width : 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+h1,h2,h3{
+    margin: 0;
+}
+//#endregion
+
+//#region global classes
+.d-none{
+    display: none !important;
+}
+.no-clicking{
+    pointer-events: none;
+}
+.choses-wrong {
+    color: $red-light-clr;
+}
+.active{
+    opacity: 1 !important;
+}
+.is-flipped{
+    @include mixinPropWithKit("transform", rotateY(180deg));
+    pointer-events: none;
+}
+
+$themes: ("orange" : $orange-light-clr,
+          "green":$green-light-clr,
+          "pink" : $pink-light-clr,
+          "yellow": $yellow-light-clr,
+          "pirple":$pirple-lighter-clr);
+
+@each $them,$val in $themes{
+    .player-#{$them}{
+        @if($them == "pirple"){
+            @include mixinMakePlayer($val,$pirple-light-clr);
+        }@else{
+            @include mixinMakePlayer($val, transparent);
+        }            
+    }
+}
+@each $them,$val in $themes{
+    .bGplayer-#{$them}{
+        background-color: $val;
+    }
+}
+
+.htmlClass-4{
+    html{
+        font-size: 13px !important;
+    }
+    .game-blocks{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        .game-block{
+            height: 7rem;
+        }
+    }
+}
+.htmlClass-6{
+    html{
+        font-size: 11px !important
+    }
+    .game-blocks{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        .game-block{
+            height: 6rem;
+        }
+    }
+}
+.htmlClass-8{
+    html{
+        font-size: 9px !important
+    }
+    .game-blocks{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        .game-block{
+            height: 5rem;
+        }
+        .front{
+            font-size: 2rem !important;
+       }
+        .back{
+             font-size: 3rem !important;
+        }
+    }
+}
+
+//#endregion
