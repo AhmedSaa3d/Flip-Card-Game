@@ -25,7 +25,7 @@ Welcome to the Memory Cards Game! This app allows you to test your memory and ch
 ## Site Screenshots
 ![Main Menu](assets/screenShots/Memory-Cards-Game-main-menu.png)
 ![Game Setup](assets/screenShots/Memory-Cards-Game-game-setup.png)
-![Game Rules](assets/Memory-Cards-Game-game-rules.png)
+![Game Rules](assets/screenShots/Memory-Cards-Game-game-rules.png)
 ![Single Player](assets/screenShots/Memory-Cards-Game-players-1.png)
 ![Two Players](assets/screenShots/Memory-Cards-Game-players-2.png)
 ![Four Players - Part 1](assets/screenShots/Memory-Cards-Game-players-4-1.png)
