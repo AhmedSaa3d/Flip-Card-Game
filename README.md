@@ -1,26 +1,30 @@
-# Memory Cards Game
-  Developed a web-responsive memory game simulating real memory games, designed to challenge users' memory by flipping cards and identifying identical pairs. The game can be played solo or with multiple players, adding a competitive element to the experience.
+# Flip Card Game
 
-## Covered Topics
-- HTML5
-- Sass/CSS3
-- JavaScript/ES6/TypeScript
-- DOM/BOM/JSON/Sound/Classes/Interfaces
-- Object-Oriented Programming Concepts
+## Project Description:-
+    Developed a dynamic memory game with customizable options for card types, number of players, and grid sizes, making it suitable for solo play or multiplayer fun.
 
-## App Functionalities
-- View game rules before starting.
-- Customize your game setup:
-  - Choose card types (Numbers/Icons).
-  - Select number of players (1-4).
-  - Pick game grid size (4x4/6x6/8x8).
-  - Enable or disable sound effects.
-- Each player has 15 seconds to match as many cards as possible.
-- Incorrect matches result in a temporary pause for the player.
-- Track correct and incorrect matches during gameplay.
-- The game ends when all cards are matched.
-- Start a new game as many times as you like.
+## Key Features:-
+    🔹 View game rules and customize game setup preferences.
+    🔹Engage in solo challenges or compete with friends in multiplayer mode.
+    🔹Test memory skills with multiple grid size options and card types.
+    🔹Enjoy sound effects for an immersive gaming experience.
+    🔹Track performance with real-time stats on correct and incorrect matches.
 
+## Covered Topics:-
+    🔹 HTML5
+    🔹 Sass/ CSS3
+    🔹 JavaScript/ ES6/ TypeScript
+    🔹 DOM manipulation, JSON data handling
+    🔹 Object-Oriented Programming principles.
+
+## How to Play:- 
+    🔹 Simply flip cards to find matching pairs within the given time limit. 
+    🔹 The game ends when all pairs are successfully matched, and players can start a new game for endless entertainment!
+
+## Live Demo: [Flip Card Game Live Demo](https://ahmedsaa3d.github.io/Flip-Card-Game/)
+
+## GitHub Repository: [Flip Card Game GitHub Repository](https://github.com/AhmedSaa3d/Flip-Card-Game)
+  
 ## Site Screenshots
 ![Main Menu](assets/screenShots/Memory-Cards-Game-main-menu.png)
 ![Game Setup](assets/screenShots/Memory-Cards-Game-game-setup.png)
