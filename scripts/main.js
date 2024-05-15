@@ -110,8 +110,8 @@ var players = /** @class */ (function () {
         this.correct = 0;
         this.wrong = 0;
         this.div = document.createElement("div");
-        this.correctAudio = new Audio("../assets/audios/correct.mp3");
-        this.wrongAudio = new Audio("../assets/audios/wrong.mp3");
+        this.correctAudio = new Audio("./assets/audios/correct.mp3");
+        this.wrongAudio = new Audio("./assets/audios/wrong.mp3");
         this.spanCorrect = document.createElement("span");
         this.spanWrong = document.createElement("span");
         this.createPlayerDiv();
@@ -300,7 +300,7 @@ var goPlay = /** @class */ (function () {
         this.createBlocks();
         this.addClickonBlocks();
         this.selectOne = false;
-        this.gameFinishAudio = new Audio("../assets/audios/game-finish.mp3");
+        this.gameFinishAudio = new Audio("./assets/audios/game-finish.mp3");
     }
     return goPlay;
 }());
