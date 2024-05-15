@@ -92,8 +92,8 @@ class players implements IPlayer{
     this.correct = 0;
     this.wrong = 0;
     this.div = document.createElement("div");
-    this.correctAudio = new Audio("../assets/audios/correct.mp3");
-    this.wrongAudio = new Audio("../assets/audios/wrong.mp3");
+    this.correctAudio = new Audio("https://ahmedsaa3d.github.io/Flip-Card-Game/assets/audios/correct.mp3");
+    this.wrongAudio = new Audio("https://ahmedsaa3d.github.io/Flip-Card-Game/assets/audios/wrong.mp3");
     this.spanCorrect = document.createElement("span");
     this.spanWrong = document.createElement("span");
     this.createPlayerDiv();
@@ -179,7 +179,7 @@ class goPlay implements IGoPlay {
     this.createBlocks();
     this.addClickonBlocks();
     this.selectOne = false;
-    this.gameFinishAudio = new Audio("../assets/audios/game-finish.mp3");
+    this.gameFinishAudio = new Audio("https://ahmedsaa3d.github.io/Flip-Card-Game/assets/audios/game-finish.mp3");
   }
   createPlayers = () : void => {
     for(let i=0;i<setupInit.playerNumbers;i++){
@@ -351,7 +351,7 @@ function fillCardsNumbers() : void{
 
 function fillCardsIcons() : void{
   let myRequset : XMLHttpRequest = new XMLHttpRequest();
-  myRequset.open("GET", `../assets/icons/fontawesomeIcons.json`, true);
+  myRequset.open("GET", `https://ahmedsaa3d.github.io/Flip-Card-Game/assets/icons/fontawesomeIcons.json`, true);
   myRequset.send();
   myRequset.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {
