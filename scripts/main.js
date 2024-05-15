@@ -319,7 +319,7 @@ function fillCardsNumbers() {
 }
 function fillCardsIcons() {
     var myRequset = new XMLHttpRequest();
-    myRequset.open("GET", "../assets/icons/fontawesomeIcons.json", true);
+    myRequset.open("GET", "./assets/icons/fontawesomeIcons.json", true);
     myRequset.send();
     myRequset.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
