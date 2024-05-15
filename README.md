@@ -4,7 +4,7 @@
     Developed a dynamic memory game with customizable options for card types, number of players, and grid sizes, making it suitable for solo play or multiplayer fun.
 
 ## Key Features:-
-    🔹 View game rules and customize game setup preferences.
+    🔹View game rules and customize game setup preferences.
     🔹Engage in solo challenges or compete with friends in multiplayer mode.
     🔹Test memory skills with multiple grid size options and card types.
     🔹Enjoy sound effects for an immersive gaming experience.
