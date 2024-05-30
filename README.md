@@ -1,7 +1,8 @@
 # Flip Card Game
 
 ## Project Description:-
-    Developed a dynamic memory game with customizable options for card types, number of players, and grid sizes, making it suitable for solo play or multiplayer fun.
+    Developed a dynamic memory game with customizable options for card types, number of players,
+    and grid sizes, making it suitable for solo play or multiplayer fun.
 
 ## Key Features:-
     🔹View game rules and customize game setup preferences.
@@ -19,7 +20,8 @@
 
 ## How to Play:- 
     🔹 Simply flip cards to find matching pairs within the given time limit. 
-    🔹 The game ends when all pairs are successfully matched, and players can start a new game for endless entertainment!
+    🔹 The game ends when all pairs are successfully matched, 
+        and players can start a new game for endless entertainment!
 
 ## Live Demo: [Flip Card Game Live Demo](https://ahmedsaa3d.github.io/Flip-Card-Game/)
 
